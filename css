@@ -1,0 +1,69 @@
+.icon:hover { transform: scale(1.2); transition: transform 0.2s; }
+.icon:active { transform: scale(0.9); }
+
+.skill:hover { transform: scale(1.1); transition: transform 0.2s; }
+.skill:active { transform: scale(0.95); }
+
+.fade-in { animation: fadeIn 1s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Custom cursor effect for nav buttons */
+.cursor-animate {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.cursor-animate::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0; height: 0;
+  background: radial-gradient(circle, #00ffd0 0%, transparent 80%);
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  z-index: -1;
+}
+.cursor-animate:hover::after {
+  width: 200%;
+  height: 400%;
+}
+
+/* Breakdown cursor effect */
+.breakdown-cursor {
+  display: inline-block;
+  color: #00ffd0;
+  animation: blink-cursor 0.7s steps(1) infinite;
+  font-weight: bold;
+  font-size: 1em;
+}
+.breakdown-cursor.done {
+  animation: none;
+  opacity: 0;
+}
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Contact form border effect */
+.contact-form-glow {
+  border: 2px solid #00ffd0;
+  box-shadow: 0 0 16px #00ffd0, 0 0 32px #0ea5e9;
+  background: linear-gradient(135deg, #10151a 80%, #0ea5e9 100%);
+}
+.contact-form-glow input,
+.contact-form-glow textarea {
+  background: #181f29;
+  color: #fff;
+  border: 1px solid #00ffd0;
+}
+.contact-form-glow input:focus,
+.contact-form-glow textarea:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 8px #00ffd0;
+}
+.contact-form-glow label {
+  color: #00ffd0;
+}
