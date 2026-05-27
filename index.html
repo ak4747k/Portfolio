@@ -457,93 +457,179 @@ section { position: relative; z-index: 1; }
   text-decoration: none; transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .social-btn:hover { background: rgba(200,23,30,0.15); color: var(--red); border-color: rgba(200,23,30,0.3); transform: translateY(-2px); }
-
-/* ─── WHATSAPP PANEL ────────────────────────────── */
+/* ─── CONTACT / TYPEFORM PANEL (UPDATED) ────────────────────────────── */
 .whatsapp-panel {
   position: relative;
   background: var(--navy-card);
-  border: 1px solid rgba(37,211,102,0.2);
-  border-radius: 20px; padding: 3rem 2.5rem;
-  text-align: center; overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
 }
+
+/* glow */
 .wa-glow {
-  position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
-  width: 260px; height: 260px;
-  background: radial-gradient(circle, rgba(37,211,102,0.18) 0%, transparent 70%);
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, transparent 70%);
   pointer-events: none;
   animation: waPulse 3s ease-in-out infinite alternate;
 }
-@keyframes waPulse { 0%{opacity:0.6;transform:translateX(-50%) scale(1)} 100%{opacity:1;transform:translateX(-50%) scale(1.15)} }
 
+@keyframes waPulse {
+  0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1.15); }
+}
+
+/* icon */
 .wa-icon-wrap {
-  position: relative; z-index: 1;
-  width: 90px; height: 90px; border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
   margin: 0 auto 1.8rem;
-  background: linear-gradient(135deg, rgba(37,211,102,0.2) 0%, rgba(18,140,60,0.3) 100%);
-  border: 2px solid rgba(37,211,102,0.35);
-  display: grid; place-items: center;
-  box-shadow: 0 0 40px rgba(37,211,102,0.2);
+
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(168, 85, 247, 0.35));
+  border: 2px solid rgba(168, 85, 247, 0.4);
+
+  display: grid;
+  place-items: center;
+
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
   backdrop-filter: blur(8px);
+
   transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
 }
+
 .whatsapp-panel:hover .wa-icon-wrap {
   transform: scale(1.08);
-  box-shadow: 0 0 60px rgba(37,211,102,0.35);
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.45);
 }
+
 .wa-icon-wrap i {
   font-size: 2.6rem;
-  color: #25d366;
-  filter: drop-shadow(0 0 12px rgba(37,211,102,0.5));
+  color: #a855f7;
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.5));
 }
-.wa-title {
-  position: relative; z-index: 1;
-  font-family: var(--font-display); font-size: 1.9rem; font-weight: 700;
-  margin-bottom: 1rem; letter-spacing: -0.02em;
-}
-.wa-sub {
-  position: relative; z-index: 1;
-  color: var(--muted); font-size: 0.95rem; line-height: 1.75;
-  max-width: 360px; margin: 0 auto 2rem;
-}
-.wa-number {
-  position: relative; z-index: 1;
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
-  color: rgba(255,255,255,0.85); margin-bottom: 2rem;
-  background: rgba(255,255,255,0.05); border: 1px solid var(--navy-border);
-  padding: 0.6rem 1.4rem; border-radius: 8px;
-}
-.wa-number i { color: #25d366; font-size: 0.9rem; }
 
+/* title */
+.wa-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  color: #c084fc;
+}
+
+/* subtitle */
+.wa-sub {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 360px;
+  margin: 0 auto 2rem;
+}
+
+/* label box */
+.wa-number {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  margin-bottom: 2rem;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+}
+
+.wa-number i {
+  color: #a855f7;
+  font-size: 0.9rem;
+}
+
+/* button */
 .wa-btn {
-  position: relative; z-index: 1;
-  display: inline-flex; align-items: center; gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
   padding: 1rem 2.4rem;
-  background: linear-gradient(135deg, rgba(37,211,102,0.85) 0%, rgba(18,140,60,0.9) 100%);
-  color: #fff; font-size: 1.05rem; font-weight: 700;
-  border: 1px solid rgba(37,211,102,0.4); border-radius: 12px;
-  text-decoration: none; letter-spacing: 0.01em;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 6px 32px rgba(37,211,102,0.3), inset 0 1px 0 rgba(255,255,255,0.18);
+
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  color: #fff;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+
+  text-decoration: none;
+  letter-spacing: 0.01em;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 6px 32px rgba(168, 85, 247, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
   transition: transform 0.25s var(--ease-spring), box-shadow 0.25s, background 0.2s;
 }
+
 .wa-btn::before {
-  content: ''; position: absolute; inset: 0; border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 55%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 55%);
   pointer-events: none;
 }
-.wa-btn i { font-size: 1.3rem; }
-.wa-btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 14px 48px rgba(37,211,102,0.45), inset 0 1px 0 rgba(255,255,255,0.22);
-  background: linear-gradient(135deg, rgba(50,220,110,0.9) 0%, rgba(22,160,70,0.95) 100%);
-}
-.wa-note {
-  position: relative; z-index: 1;
-  font-size: 0.76rem; color: rgba(255,255,255,0.3);
-  margin-top: 1rem; letter-spacing: 0.04em;
+
+.wa-btn i {
+  font-size: 1.3rem;
 }
 
+.wa-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 48px rgba(168, 85, 247, 0.45),
+              inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+}
+
+/* note */
+.wa-note {
+  position: relative;
+  z-index: 1;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 1rem;
+  letter-spacing: 0.04em;
+}
 /* ─── FOOTER ────────────────────────────────────── */
 footer {
   background: var(--navy); border-top: 1px solid var(--navy-border);
@@ -929,30 +1015,38 @@ footer {
       </div>
 
       <div class="whatsapp-panel reveal">
-        <div class="wa-glow"></div>
-        <div class="wa-icon-wrap">
-          <i class="fab fa-whatsapp"></i>
-        </div>
-        <h3 class="wa-title">Chat on WhatsApp</h3>
-        <p class="wa-sub">Drop us a message directly — we typically respond within minutes. Tell us about your project and let's get the conversation started.</p>
-        <div class="wa-number">
-          <i class="fas fa-phone-alt"></i>
-          +92 314 345 8111
-        </div>
-        <a
-          href="https://wa.me/923143458111?text=Hi%20Ak%20Enterprises%2C%20I%20found%20you%20through%20your%20website%20and%20I%27d%20love%20to%20discuss%20a%20project."
-          target="_blank" rel="noopener"
-          class="wa-btn"
-        >
-          <i class="fab fa-whatsapp"></i>
-          Open WhatsApp
-        </a>
-        <p class="wa-note">Opens in WhatsApp — web or app</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="wa-glow"></div>
 
+  <div class="wa-icon-wrap">
+    <i class="fas fa-paper-plane"></i>
+  </div>
+
+  <h3 class="wa-title">Start Your Project</h3>
+
+  <p class="wa-sub">
+    Tell us about your idea, business, or project requirements.
+    We’ll review everything and get back to you professionally.
+  </p>
+
+  <div class="wa-number">
+    <i class="fas fa-file-alt"></i>
+    Quick Client Inquiry Form
+  </div>
+
+  <a
+    href="https://form.typeform.com/to/YtVAB3qG"
+    target="_blank"
+    rel="noopener"
+    class="wa-btn"
+  >
+    <i class="fas fa-arrow-right"></i>
+    Open Inquiry Form
+  </a>
+
+  <p class="wa-note">
+    Opens secure Typeform submission page
+  </p>
+</div>
 <!-- ─── FOOTER ────────────────────────────────────── -->
 <footer>
   <div class="footer-grid">
